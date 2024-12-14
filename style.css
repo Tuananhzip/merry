@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'mountains_of_christmasregular';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff2') format('woff2'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    background-color: #20202c;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+svg {
+    width: 90%;
+    height: 90%;
+    visibility: hidden;
+
+}
+
+#endMessage {
+    font-family: mountains_of_christmasregular;
+    font-size: 2rem;
+    text-anchor: middle;
+    text-align: center;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    opacity: 0;
+    letter-spacing: 1px;
+    cursor: pointer;
+}   
+
+a {
+    color: white;
+    text-decoration: underline dotted #FFFFFF;
+}
+
+/* Initial styling */
+.letter-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hide the letter initially */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Letter animation */
+.letter {
+    width: 300px;
+    height: auto;
+    background-color: #f5c6cb;
+    border-radius: 8px;
+    overflow: hidden;
+    position: absolute;
+    right: 100px;
+    transform: rotateX(-90deg); /* Start with the letter flipped */
+    animation: flipLetter 1s forwards;
+}
+
+.typing-text {
+    display: block;
+    opacity: 0; /* Start with text hidden */
+    animation: fadeIn 4s forwards; /* Fade-in effect */
+    word-wrap: break-word; /* Break long words if needed */
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        opacity: 1; /* Fade to opacity 1 */
+    }
+}
+
+.letter-content {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+@keyframes flipLetter {
+    0% {
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.endMessage {
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    background-color: #f8d7da;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.endMessage:hover {
+    background-color: #f5b6b6;
+}
+
+.sign{
+    color: rgb(15, 119, 238);
+    text-decoration: underline !important;
+}
